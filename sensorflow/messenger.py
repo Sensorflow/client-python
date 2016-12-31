@@ -1,5 +1,6 @@
-import protocol_buffers_stream
-import model as command_sf
+from protobuf_stream import ProtocolBuffersStream
+import sensorflow.model as command_sf
+
 
 class SensorflowSerialMessenger(object):
     def __init__(self, port='/dev/ttyUSB0', baudrate=115200):
