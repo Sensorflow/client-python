@@ -4,6 +4,8 @@ Example
 -------
 
 ```python
+from sensorflow.messenger import SensorflowSerialMessenger
+
 sfm = SensorflowSerialMessenger()
 import time
 time.sleep(2) # If you have to wait for your devices
