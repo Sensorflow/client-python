@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
     name='sensorflow',
     packages=['sensorflow'],
-    version='2.3',
+    version='2.4',
     description='Python driver for sensorflow devices',
     author='Alvaro Garcia Gomez',
     author_email='maxpowel@gmail.com',

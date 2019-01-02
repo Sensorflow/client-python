@@ -8,7 +8,7 @@ class SensorflowSerialMessenger(object):
 
     def ping(self, test_value=101):
         ping_command = command_sf.Command()
-        ping_command.command = command_sf.Command.CommandType.PING
+        ping_command.command = "sfp"
         self.messenger.send(ping_command)
 
         ping_command = command_sf.Ping()
@@ -22,7 +22,7 @@ class SensorflowSerialMessenger(object):
 
     def notification(self):
         notification_command = command_sf.Command()
-        notification_command.command = command_sf.Command.CommandType.NOTIFICATION
+        notification_command.command = "sfn"
         self.messenger.send(notification_command)
 
         notification_response = command_sf.Notification()
@@ -32,7 +32,7 @@ class SensorflowSerialMessenger(object):
     def read_all(self):
         read_response = command_sf.SensorReadList()
         read_command = command_sf.Command()
-        read_command.command = command_sf.Command.CommandType.READ_ALL
+        read_command.command = "sfra"
         self.messenger.send(read_command)
         self.messenger.receive(read_response)
         return read_response.reads
@@ -40,7 +40,7 @@ class SensorflowSerialMessenger(object):
     def read(self, sensor_name):
         read_response = command_sf.SensorRead()
         read_command = command_sf.Command()
-        read_command.command = command_sf.Command.CommandType.READ
+        read_command.command = "sfr"
         self.messenger.send(read_command)
         sensor_name_command = command_sf.SensorName()
         sensor_name_command.name = sensor_name
